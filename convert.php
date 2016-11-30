@@ -23,11 +23,12 @@
 		{
 		if ($scale == "celcius") 
 		{
-			 print "<table><tr><th> Conversion Results</th></tr><tr><td>$degree</td><td>celsius</td></tr>"; 
+			 print "<table border><tr><th colspan=2> Conversion Results</th></tr><tr><td>$degree</td><td>celsius</td></tr>"; 
 			 $c_2_f = $degree*9/5+32; 
 			 print "<tr><td>$c_2_f</td><td>fahrenheit</td></tr>"; 
 			 $c_2_k = $degree+273.15; 
 			 print "<tr><td>$c_2_k </td><td>kelvin</td></tr>"; } 
+        
 		if ($scale == "fahrenheit") 
 		{
 			 print "<table border><tr><th colspan=2> Conversion Results</th></tr><tr><td>$degree</td><td>farhenheit</td></tr>"; 
