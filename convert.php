@@ -12,39 +12,50 @@
  </form> 
 
 <?php 
+     
+include 'temperatureclass.php';
+         
  //check for input
  if (array_key_exists('degree',$_GET)){
 	$scale = $_GET['scale'];
 	$degree = $_GET['degree'];
 	$firstLength = strlen($_GET['degree']);
 	
+     $temperature = new Temperature();
+     
 	//check that input is not NULL or NaN
 	if(($firstLength > 0) && (is_numeric($_GET['degree'])))
 		{
 		if ($scale == "celcius") 
 		{
 			 print "<table border><tr><th colspan=2> Conversion Results</th></tr><tr><td>$degree</td><td>celsius</td></tr>"; 
-			 $c_2_f = $degree*9/5+32; 
-			 print "<tr><td>$c_2_f</td><td>fahrenheit</td></tr>"; 
-			 $c_2_k = $degree+273.15; 
-			 print "<tr><td>$c_2_k </td><td>kelvin</td></tr>"; } 
+            
+			 $temp = $temperature->c2f($degree);
+			 print "<tr><td>$temp</td><td>fahrenheit</td></tr>"; 
+            
+			 $temp = $temperature->c2k($degree);
+			 print "<tr><td>$temp</td><td>kelvin</td></tr>"; } 
         
 		if ($scale == "fahrenheit") 
 		{
-			 print "<table border><tr><th colspan=2> Conversion Results</th></tr><tr><td>$degree</td><td>farhenheit</td></tr>"; 
-			 $f_2_c = ($degree -32)*5/9; 
-			 print "<tr><td>$f_2_c</td><td>celsius</td></tr>"; 
-			 $f_2_k = $f_2_c+273.15; 
-			 print "<tr><td>$f_2_k </td><td>kelvin</td></tr>";} 
+			 print "<table border><tr><th colspan=2> Conversion Results</th></tr><tr><td>$degree</td><td>farhenheit</td></tr>";
+            
+			 $temp = $temperature->f2c($degree); 
+			 print "<tr><td>$temp</td><td>celsius</td></tr>";
+            
+			 $temp = $temperature->f2k($degree); 
+			 print "<tr><td>$temp</td><td>kelvin</td></tr>";} 
 		 
 		 if ($scale == "kelvin") 
 		{
 			 print "<table border><tr><th colspan=2> Conversion Results</th></tr><tr><td> 
 			 $degree</td><td>kelvin</td></tr>"; 
-			 $k_2_f = ($degree - 273.15) * 9 / 5 + 32; 
-			 print "<tr><td>$k_2_f</td><td>fahrenheit</td></tr>"; 
-			 $k_2_c = $degree-273.15; 
-			 print "<tr><td>$k_2_c </td><td>celsius</td></tr>";} 
+             
+			 $temp = $temperature->k2f($degree); 
+			 print "<tr><td>$temp</td><td>fahrenheit</td></tr>";
+             
+			 $temp = $temperature->k2c($degree); 
+			 print "<tr><td>$temp</td><td>celsius</td></tr>";} 
 		  
 	 }
 	 else
