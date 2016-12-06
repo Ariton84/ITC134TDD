@@ -3,7 +3,7 @@
 require_once 'convert.php';
 
 
-class TestOfTemperature extends UnitTestCase {
+class TestOfTemperature extends PHPUnit_Framework_TestCase {
 
 	function testCelsiusToKelvin() {
 	  $myTemp= new Temperature();
