@@ -1,5 +1,5 @@
 <?php
-
+require_once('convert.php');
 
 class Temperature
      {
