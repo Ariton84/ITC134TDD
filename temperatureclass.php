@@ -24,7 +24,10 @@ class Temperature
         }
         function k2c($degree) {
             
+
             return $degree - 273;
+
+        
         }
         function k2f($degree) {
             
