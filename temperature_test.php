@@ -5,12 +5,12 @@ require_once 'convert.php';
 
 class TestOfTemperature extends PHPUnit_Framework_TestCase {
 
-	function testCelsiusToKelvin() {
-	  $myTemp= new Temperature();
-	  $this->assertEqual($myTemp->c2k(100), 373, "100 Celsius is 373 Kelvin");
-	  $this->assertEqual($myTemp->c2k(0), 273, "0 Celsius is 373 Kelvin");
-	  $this->assertPattern('/error/i', $myTemp->c2k(-274), "-274 Celsius should generate error message");	
-	}
+	//function testCelsiusToKelvin() {
+	  //$myTemp= new Temperature();
+	  //$this->assertEqual($myTemp->c2k(100), 373, "100 Celsius is 373 Kelvin");
+	  //$this->assertEqual($myTemp->c2k(0), 273, "0 Celsius is 373 Kelvin");
+	  //$this->assertPattern('/error/i', $myTemp->c2k(-274), "-274 Celsius should generate error message");	
+	
 	function testCelsiusToFahrenheit() {
 	  $myTemp= new Temperature();
 	  $this->assertEqual($myTemp->c2f(100), 212, "100 Celsius is 212 Fahrenheit");
