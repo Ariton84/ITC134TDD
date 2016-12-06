@@ -1,6 +1,6 @@
 <?php
 //calculator_test2.php
-require_once 'simpletest/autorun.php';
+require_once 'convert.php';
 include 'temperatureclass.php';
 
 class TestOfTemperature extends UnitTestCase {
