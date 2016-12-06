@@ -1,9 +1,6 @@
 { 
      "config": { 
-         "platform": { 
--            "php": "5.3.9" 
-+            "php": "7.0" 
-         } 
+         "platform": 
      }, 
 
      "suggest": } 
