@@ -3,10 +3,17 @@
 include_once 'convert.php';
 
 class TestTemperature extends PHPUnit_Framework_TestCase {
-
+    public function __call($command, $arguments) {
+        $class_methods = get_class_methods(__CLASS__);
+        if(!in_array($command, $class_methods)) {
+            throw new BadMethodCallException(
+                  "Method $command not defined."
+                );
+        }
+    }
 	function testCelsiusToKelvin() {
 	  $myTemp= new Temperature();
-	  $this->assertEqual($myTemp->c2k,100, 373, "100 Celsius is 373 Kelvin");
+	  $this->assertEqual($myTemp->c2k(100), 373, "100 Celsius is 373 Kelvin");
 	  $this->assertEqual($myTemp->c2k(0), 273, "0 Celsius is 373 Kelvin");
 	  $this->assertPattern('/error/i', $myTemp->c2k(-274), "-274 Celsius should generate error message");	
 	}
