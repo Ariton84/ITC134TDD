@@ -13,8 +13,8 @@ class TestTemperature extends PHPUnit_Framework_TestCase {
     }
 	function testCelsiusToKelvin() {
 	  $myTemp= new Temperature();
-	  $this->assertEqual($myTemp->c2k(100), 373, "100 Celsius is 373 Kelvin");
-	  $this->assertEqual($myTemp->c2k(0), 273, "0 Celsius is 373 Kelvin");
+	  $this->assert_equal($myTemp->c2k(100), 373, "100 Celsius is 373 Kelvin");
+	  $this->assert_equal($myTemp->c2k(0), 273, "0 Celsius is 373 Kelvin");
 	  $this->assertPattern('/error/i', $myTemp->c2k(-274), "-274 Celsius should generate error message");	
 	}
 	function testCelsiusToFahrenheit() {
