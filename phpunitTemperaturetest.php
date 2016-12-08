@@ -16,8 +16,8 @@ class TestTemperature extends PHPUnit_Framework_TestCase {
 
 	function testCelsiusToKelvin() {
 	  $myTemp= new Temperature();
-	  $this->assertEquals($myTemp->c2k(100), 373, "100 Celsius is 373 Kelvin");
-	  $this->assertEquals($myTemp->c2k(0), 273, "0 Celsius is 373 Kelvin");
+	  $this->assertEquals($myTemp->c2k(100), 373.15, "100 Celsius is 373 Kelvin");
+	  $this->assertEquals($myTemp->c2k(0), 273.15, "0 Celsius is 373 Kelvin");
 	}
 
 	function testCelsiusToFahrenheit() {
@@ -28,8 +28,8 @@ class TestTemperature extends PHPUnit_Framework_TestCase {
     
 	function testFahrenheitToKelvin() {
 	  $myTemp= new Temperature();
-	  $this->assertEquals($myTemp->f2k(212), 373, "212 Fahrenheit is 373 Kelvin");
-	  $this->assertEquals($myTemp->f2k(32), 273, "32 Fahrenheit is 273 Kelvin");
+	  $this->assertEquals($myTemp->f2k(212), 373.15, "212 Fahrenheit is 373 Kelvin");
+	  $this->assertEquals($myTemp->f2k(32), 273.15, "32 Fahrenheit is 273 Kelvin");
 	}
 
 	function testFahrenheitToCelsius() {
@@ -40,14 +40,13 @@ class TestTemperature extends PHPUnit_Framework_TestCase {
 
 	function testKelvinToCelsius() {
 	  $myTemp= new Temperature();
-	  $this->assertEquals($myTemp->k2c(100), -173, "100 Kelvin is =173 Celsius");
-	  $this->assertEquals($myTemp->k2c(10), -263, "10 Kelvin is -263 Celsius");
+	  $this->assertEquals($myTemp->k2c(100), -173.15, "100 Kelvin is =173 Celsius");
+	  $this->assertEquals($myTemp->k2c(10), -263.15, "10 Kelvin is -263 Celsius");
 	}  
       
 	function testKelvinToFahrenheit() {
 	  $myTemp= new Temperature();
-	  $this->assertEquals($myTemp->k2f(258.15), 5, "258.15 Kelvin is 5 Fahrenheit");
-	  $this->assertEquals($myTemp->k2f(0), -459, "0 Kelvin is -459 Fahrenheit");
-	  $this->assertRegExp('/error/i', $myTemp->k2f(-10), "-10 Kelvin to Fahrenheit should generate error message");	
+	  $this->assertEquals($myTemp->k2f(255), -0.67, "258.15 Kelvin is 5 Fahrenheit");
+	  $this->assertEquals($myTemp->k2f(0), -459.67, "0 Kelvin is -459 Fahrenheit");	
 	}
 }
