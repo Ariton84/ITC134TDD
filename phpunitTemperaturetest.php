@@ -46,7 +46,7 @@ class TestTemperature extends PHPUnit_Framework_TestCase {
       
 	function testKelvinToFahrenheit() {
 	  $myTemp= new Temperature();
-	  $this->assertEquals($myTemp->k2f(255), -.67, "255 Kelvin is 0 Fahrenheit");
+	  $this->assertEquals($myTemp->k2f(255.372), 0, "255.372 Kelvin is 0 Fahrenheit");
 	  $this->assertEquals($myTemp->k2f(0), -459, "0 Kelvin is -459 Fahrenheit");
 	  $this->assertRegExp('/error/i', $myTemp->k2f(-10), "-10 Kelvin to Fahrenheit should generate error message");	
 	}
