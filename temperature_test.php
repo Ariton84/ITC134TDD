@@ -1,17 +1,10 @@
 <?php
 //calculator_test2.php
 require_once 'simpletest/autorun.php';
-include_once 'convert.php';
+include 'temperatureclass.php';
 
-class TestTemperature extends PHPUnit_Framework_TestCase {
-    public function __call($command, $arguments) {
-        $class_methods = get_class_methods(__CLASS__);
-        if(!in_array($command, $class_methods)) {
-            throw new BadMethodCallException(
-                  "Method $command not defined."
-                );
-        }
-    }
+class TestOfTemperature extends UnitTestCase {
+
 	function testCelsiusToKelvin() {
 	  $myTemp= new Temperature();
 	  $this->assertEqual($myTemp->c2k(100), 373, "100 Celsius is 373 Kelvin");
@@ -43,7 +36,6 @@ class TestTemperature extends PHPUnit_Framework_TestCase {
 	  $this->assertEqual($myTemp->k2c(100), -173, "100 Kelvin is =173 Celsius");
 	  $this->assertEqual($myTemp->k2c(10), -263, "10 Kelvin is -263 Celsius");
 	  $this->assertPattern('/error/i', $myTemp->k2c(-10), "-10 Kelvin to Celsius should generate error message");	
-      //$this->expectException($myTemp->k2c(), -263, "No parameter should throw exception");
 	}  
       
 	function testKelvinToFahrenheit() {
