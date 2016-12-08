@@ -13,18 +13,18 @@ class Temperature
         }        
         function f2k($degree) 
 	{             
-	        return 5/9*($degree - 32) + 273;
+	        return 5/9*($degree - 32) + 273.15;
         }
         function c2k($degree) 
 	{
-                return $degree + 273;
+                return $degree + 273.15;
         }
         function k2c($degree) 
 	{
-                return $degree - 273;
+                return $degree - 273.15;
         }
         function k2f($degree) {
-                return 9/5*($degree - 273) + 32;
+                return 9/5*($degree - 273.15) + 32;
         }
      }
 ?>
