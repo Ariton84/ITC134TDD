@@ -19,6 +19,16 @@ class ConvertFormTests extends WebTestCase {
 		$this->assertText("5");
 		$this->assertText("41");
 		$this->assertText("278");
+		
+		$this->setField("degree", -1);
+		$this->setField("scale", kelvin);
+
+		$this->clickSubmit("Submit");
+
+		$this->assertResponse(200);
+		$this->assertNoText("-1", '-1 kelvin does not exist, the lowest temperature possible is absolute zero: 0 kelvin');
+		$this->assertNoText("-461.2");
+		$this->assertNoText("-274");
 	}
 
 }
