@@ -6,6 +6,7 @@
     },
  "autoload": {
     "classmap": [
+        "/bin/temperatureclass.php",
       "/bin/phpunitTemperaturetest.php",
       "/bin/convert.php"
     ]
