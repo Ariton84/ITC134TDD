@@ -1,15 +1,13 @@
 {
-
     "require": {
-
-
     },
-
     "require-dev": {
-
         "phpunit/phpunit": "5.7.4"
-       
-    }
-
-
+    },
+ "autoload": {
+    "classmap": [
+      "/bin/phpunitTemperaturetest.php",
+      "/bin/convert.php"
+    ]
+  }
 }
